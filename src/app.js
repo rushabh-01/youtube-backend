@@ -66,13 +66,7 @@ app.get("/subscribers/:_id", async (req, res) => {
   await subscriberModel
     .findById(req.params._id)
     .then((data) => {
-      if (!data) {
-        res.status(400).send({
-          message: Error(`user does not exist with inserted ID`).message,
-        });
-      } else {
         res.send(data);
-      }
     })
 
     .catch(() => {
