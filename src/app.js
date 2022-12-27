@@ -8,17 +8,11 @@ const subscriberModel = require("./models/subscribers");
 app.use(express.json());
 
 
-
-
-
 // The app.get() routes the HTTP GET Requests to the path which is being specified with the specified callback functions.
 // It will return h2 tag
 app.get("/", async (req, res) => {
   res.send(`<h2> Get Youtube Subscriber </h2>`);
 });
-
-
-
 
 
 // TO GET DETAILS OF ALL SUBSCRIBERS
@@ -34,9 +28,6 @@ app.get("/subscribers", async (req, res) => {
     res.status(404).send(error);
   }
 });
-
-
-
 
 
 // TO GET NAMES AND SUBSCRIBED CHANNEL OF ALL SUBSCRIBERS
@@ -57,9 +48,6 @@ app.get("/subscribers/names", async (req, res) => {
 });
 
 
-
-
-
 // TO GET DETAILS OF THE SUBSCRIBER WITH PARTICULAR ID
 app.get("/subscribers/:_id", async (req, res) => {
   // .findById() functions finds data for the particular ID
@@ -78,12 +66,12 @@ app.get("/subscribers/:_id", async (req, res) => {
 });
 
 
-
-
-
 //  throws error message when wrong endpoint is inserted
 app.use((req, res) => {
   res.status(404).send({ message: "error 404 , invalid route" });
 });
+
+
+
 
 module.exports = app;
