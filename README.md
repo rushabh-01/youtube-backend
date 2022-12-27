@@ -2,9 +2,9 @@
 
 Stacks used in the project : 
 
-Mongodb
-Express js
-Node js
+1. Mongodb
+2. Express js
+3. Node js
 
 # Steps to install project and run
 
