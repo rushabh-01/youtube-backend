@@ -37,7 +37,7 @@ Node js
 3. GET http://localhost:3000/subscribers/names  :-   this endpoint will only return the names and subscribed channel of all the subscribers.
 It will not return id of the subscribers.
 
-4. GET http://localhost:3000/subscribers/:_id   :-   the user has to replace ":_id" with the actual id of the subscriber to retrive details of that particular subscriber only.
+4. GET http://localhost:3000/subscribers/:_id   :-   the user has to replace ":_id" with the actual id of the subscriber to retrieve details of that particular subscriber only.
 On hitting incorrect user id , user will recieve an error message saying  "id does not match".
 
 5. On hitting incorrect endpoint to the url , user will recieve message saying "error 404 , invalid route".
