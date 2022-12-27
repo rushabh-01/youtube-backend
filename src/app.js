@@ -14,7 +14,7 @@ app.use(express.json());
 // The app.get() routes the HTTP GET Requests to the path which is being specified with the specified callback functions.
 // It will return h2 tag
 app.get("/", async (req, res) => {
-  res.send(`<h2> Backend capstone project </h2>`);
+  res.send(`<h2> Get Youtube Subscriber </h2>`);
 });
 
 
