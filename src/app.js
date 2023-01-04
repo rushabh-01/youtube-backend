@@ -58,7 +58,7 @@ app.get("/subscribers/:_id", async (req, res) => {
     })
 
     .catch(() => {
-      res.status(404).json({
+      res.status(400).json({
         // sends error if ID does not match
         message: `id does not match`,
       });
@@ -68,7 +68,7 @@ app.get("/subscribers/:_id", async (req, res) => {
 
 //  throws error message when wrong endpoint is inserted
 app.use((req, res) => {
-  res.status(400).send({ message: "error 400 , invalid route" });
+  res.status(404).send({ message: "error 404 , invalid route" });
 });
 
 
