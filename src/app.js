@@ -11,7 +11,7 @@ app.use(express.json());
 // The app.get() routes the HTTP GET Requests to the path which is being specified with the specified callback functions.
 // It will return h2 tag
 app.get("/", async (req, res) => {
-  res.send(`<h2> Get Youtube Subscriber </h2>`);
+  res.send(`<h1> Get Youtube Subscriber </h1>`);
 });
 
 
@@ -40,7 +40,7 @@ app.get("/subscribers/names", async (req, res) => {
       _id: 0,
     });
     // it will only return name and subscribed channel of all subscribers
-    res.send(subscriber);
+    res.send(JSON.stringify(subscriber));
   } catch (error) {
     // sends error if url not found
     res.status(404).send(error);
@@ -58,7 +58,7 @@ app.get("/subscribers/:_id", async (req, res) => {
     })
 
     .catch(() => {
-      res.status(400).json({
+      res.status(404).json({
         // sends error if ID does not match
         message: `id does not match`,
       });
@@ -68,7 +68,7 @@ app.get("/subscribers/:_id", async (req, res) => {
 
 //  throws error message when wrong endpoint is inserted
 app.use((req, res) => {
-  res.status(404).send({ message: "error 404 , invalid route" });
+  res.status(400).send({ message: "error 400 , invalid route" });
 });
 
 
